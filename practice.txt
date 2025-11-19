@@ -21,7 +21,7 @@ def multiply(a, b):
 print(multiply(3, 4))
 print(add(10, 20))
 
-
+"""
 # virtual env in python
 # same machine for different projects
 # different dependencies
@@ -38,7 +38,7 @@ print(add(10, 20))
 # pip3 freeze > requirements.txt
 # pip3 install -r requirements.txt
 # pip3 list
-
+"""
 
 variables :
 
