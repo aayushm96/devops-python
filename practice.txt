@@ -1,0 +1,52 @@
+name = "aayush"
+age = 30
+
+print(f"My name is {name} and I am {age} years old.")
+print("Hello world")
+
+
+print(f"my name is {name} and I am {age} years old")
+
+print("Hello world")
+
+
+def add(a, b):
+    return a + b
+
+add(5, 7)
+
+def multiply(a, b):
+    return a * b
+
+print(multiply(3, 4))
+print(add(10, 20))
+
+
+# virtual env in python
+# same machine for different projects
+# different dependencies
+# different versions of libraries
+# isolate projects
+# pip3 install virtualenv
+# python3 -m venv <name-of-env>
+# python3 -m venv dev
+# source <name-of-env>/bin/activate
+# source dev/bin/activate
+# deactivate
+# source env/bin/activate
+# pip3 install <package-name>
+# pip3 freeze > requirements.txt
+# pip3 install -r requirements.txt
+# pip3 list
+
+
+variables :
+
+string
+int
+float
+bool
+list
+tuple
+set # not sure about set in python
+dict

@@ -1,8 +1,11 @@
 import csv
+import sys
 import requests
 from openpyxl import Workbook
 
-csv_file = './data.csv'
+# CSV file from command line
+csv_file = sys.argv[1]
+
 urls = []
 
 # Step 1: Read URLs from CSV
@@ -17,20 +20,22 @@ ws = wb.active
 ws.title = "Responses"
 
 # Create headers
-ws.append(["URL", "Response"])
+ws.append(["URL", "Response", "Status Code"])
 
-# Step 3: Curl each URL and collect only the response
+# Step 3: Curl each URL and collect response
 for url in urls:
     try:
-        response = requests.get("https://{url}", timeout=5)
+        url = f"https://{url}"
+        response = requests.get(url, timeout=5)
         body = response.text
+        status_code = response.status_code
     except Exception as e:
-        body = f"ERROR: {str(e)}"
-    
+        body = f"Error: {str(e)}"
+        status_code = "N/A"
+
     # Write row into Excel
-    ws.append([url, body])
+    ws.append([url, body, status_code])
 
 # Step 4: Save Excel file
 wb.save("responses.xlsx")
-
 print("Saved all responses to responses.xlsx")
