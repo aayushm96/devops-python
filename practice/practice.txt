@@ -50,3 +50,13 @@ list
 tuple
 set # not sure about set in python
 dict
+
+
+if __name__ == "__main__":
+    delete_unused_volumes(days_old=7, dry_run=False)   # Set dry_run=True for testing
+
+when import this file in another file, this block will not be executed as it will pass file name to the __name__ variable
+
+dry_run = True  # Set to False to actually delete volumes
+
+
