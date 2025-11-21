@@ -26,7 +26,7 @@ ws.append(["URL", "Response", "Status Code"])
 for url in urls:
     try:
         url = f"https://{url}"
-        response = requests.get(url, timeout=5)
+        response = requests.get(f"https://{url}", timeout=5)
         body = response.text
         status_code = response.status_code
     except Exception as e:
